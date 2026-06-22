@@ -1,0 +1,9 @@
+{
+  "name": "Diego Masoterapia",
+  "short_name": "DiegoMaso",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f7f8fb",
+  "theme_color": "#1d4ed8",
+  "lang": "es-CL"
+}
