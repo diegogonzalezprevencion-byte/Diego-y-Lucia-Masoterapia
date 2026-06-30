@@ -1,0 +1,476 @@
+:root {
+  --bg: #f7f7f3;
+  --text: #18372f;
+  --muted: #65766e;
+  --primary: #2e5e4e;
+  --primary-dark: #173d33;
+  --secondary: #4d7f6a;
+  --accent: #b8d8c2;
+  --card: #ffffff;
+  --border: #dfe8df;
+  --soft-green: #eaf4ef;
+  --soft-mint: #d9ebdf;
+  --soft-blue: #e9f6f4;
+  --cream: #fbfaf5;
+  --dark: #173d33;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: Arial, Helvetica, sans-serif;
+}
+a { color: inherit; text-decoration: none; }
+.container { width: min(1120px, calc(100% - 32px)); margin: 0 auto; }
+
+.navbar {
+  background: rgba(251, 250, 245, .94);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  backdrop-filter: blur(12px);
+}
+.navbar-inner { min-height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 18px; }
+.brand { font-weight: 900; font-size: 20px; color: var(--primary-dark); }
+.brand-with-logo { display: flex; align-items: center; gap: 12px; }
+.brand-logo { width: 54px; height: 54px; object-fit: contain; }
+.nav-links { display: flex; gap: 18px; align-items: center; font-size: 15px; flex-wrap: wrap; }
+
+.btn {
+  display: inline-block;
+  padding: 12px 18px;
+  border-radius: 999px;
+  background: var(--primary);
+  color: white;
+  font-weight: 800;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 10px 20px rgba(46, 94, 78, .14);
+}
+.btn.secondary { background: var(--secondary); }
+.btn.gray { background: #7d8d86; }
+.btn.red { background: #c2410c; }
+.btn.whatsapp { background: #16a34a; }
+.btn.dark { background: var(--dark); }
+.btn:disabled { opacity: .55; cursor: not-allowed; }
+
+.hero {
+  padding: 86px 0 70px;
+  background:
+    radial-gradient(circle at 80% 15%, rgba(184, 216, 194, .46), transparent 26%),
+    radial-gradient(circle at 8% 20%, rgba(217, 235, 223, .75), transparent 30%),
+    linear-gradient(135deg, #fbfaf5 0%, #eaf4ef 58%, #e9f6f4 100%);
+}
+.hero-grid { display: grid; grid-template-columns: 1.04fr .96fr; gap: 38px; align-items: center; }
+.hero-logo { width: 175px; max-width: 46vw; height: auto; margin-bottom: 12px; }
+
+.hero-photo-card {
+  position: relative;
+  border-radius: 36px;
+  overflow: hidden;
+  border: 1px solid rgba(46, 94, 78, .14);
+  box-shadow: 0 24px 60px rgba(46, 94, 78, .18);
+  background: white;
+}
+.hero-photo {
+  width: 100%;
+  display: block;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: center;
+}
+.hero-photo-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 50%, rgba(23, 61, 51, .64));
+  pointer-events: none;
+}
+.hero-photo-caption {
+  position: absolute;
+  left: 22px;
+  right: 22px;
+  bottom: 22px;
+  z-index: 2;
+  color: white;
+  display: grid;
+  gap: 4px;
+}
+.hero-photo-caption strong { font-size: 22px; }
+.hero-photo-caption span { color: #eaf4ef; }
+
+.eyebrow { color: var(--primary); font-weight: 900; letter-spacing: .04em; text-transform: uppercase; font-size: 13px; }
+h1 { font-size: clamp(38px, 5vw, 64px); line-height: 1.02; margin: 14px 0 18px; letter-spacing: -0.045em; color: var(--primary-dark); }
+h2 { font-size: clamp(28px, 4vw, 42px); margin: 0 0 16px; letter-spacing: -0.025em; color: var(--primary-dark); }
+h3 { margin-bottom: 8px; color: var(--primary-dark); }
+p { color: var(--muted); line-height: 1.65; }
+
+.card, .hero-card, .visual-card, .feature-card, .price-card {
+  background: rgba(255,255,255,.92);
+  border: 1px solid var(--border);
+  box-shadow: 0 12px 28px rgba(23, 61, 51, .06);
+}
+.card { border-radius: 24px; padding: 24px; }
+.hero-card { border-radius: 30px; padding: 30px; }
+.feature-card { border-radius: 28px; padding: 28px; position: relative; overflow: hidden; }
+.feature-card::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 5px;
+  background: linear-gradient(90deg, var(--primary), var(--accent), var(--secondary));
+}
+
+.visual-card { border-radius: 30px; padding: 28px; min-height: 360px; display: grid; align-content: center; overflow: hidden; }
+.wellness-card {
+  background:
+    linear-gradient(135deg, rgba(46,94,78,.84), rgba(77,127,106,.74)),
+    radial-gradient(circle at 85% 20%, rgba(255,255,255,.36), transparent 25%),
+    linear-gradient(135deg, #eaf4ef, #d9ebdf);
+  color: white;
+}
+.wellness-card h2 { color: white; }
+.wellness-card p { color: #edf7f0; }
+
+.visual-placeholder {
+  min-height: 240px;
+  border-radius: 24px;
+  background:
+    linear-gradient(135deg, rgba(46,94,78,.18), rgba(184,216,194,.36)),
+    repeating-linear-gradient(45deg, rgba(255,255,255,.42) 0 10px, rgba(255,255,255,.18) 10px 20px);
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: 22px;
+  color: var(--primary-dark);
+  font-weight: 900;
+}
+.image-band {
+  border-radius: 30px;
+  padding: 34px;
+  background:
+    linear-gradient(135deg, rgba(46,94,78,.92), rgba(77,127,106,.88)),
+    repeating-linear-gradient(45deg, rgba(255,255,255,.12) 0 12px, rgba(255,255,255,.05) 12px 24px);
+  color: white;
+}
+.image-band p { color: #eaf4ef; }
+
+.badge-list { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; }
+.badge {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 8px 12px;
+  color: var(--primary);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.section { padding: 80px 0; }
+.section.alt { background: white; }
+.section.soft { background: linear-gradient(135deg, #fbfaf5, #eaf4ef); }
+.section.dark { background: #173d33; color: white; }
+.section.dark p { color: #d9ebdf; }
+.section.dark h2, .section.dark h3 { color: white; }
+.section.dark .eyebrow { color: #b8d8c2; }
+
+.grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+.grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+
+.price { font-size: 26px; font-weight: 900; color: var(--primary); }
+.price-card { border-radius: 26px; padding: 24px; }
+.price-card.highlight { border-color: var(--primary); box-shadow: 0 16px 34px rgba(46, 94, 78, .13); transform: translateY(-4px); }
+.list { padding-left: 18px; color: var(--muted); line-height: 1.8; }
+
+.cta { background: #173d33; color: white; border-radius: 30px; padding: 38px; margin-top: 34px; }
+.cta h2 { color: white; }
+.cta p { color: #d9ebdf; }
+
+.footer { padding: 34px 0; border-top: 1px solid var(--border); background: white; color: var(--muted); }
+.footer-grid { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+.footer-logo { width: 92px; height: auto; object-fit: contain; }
+.contact-logo { max-width: 180px; height: auto; margin-bottom: 10px; }
+
+.form { display: grid; gap: 16px; }
+.input, .select, .textarea {
+  width: 100%;
+  padding: 13px 14px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: white;
+  font-size: 15px;
+}
+.textarea { min-height: 130px; resize: vertical; }
+.label { display: grid; gap: 7px; font-weight: 700; color: var(--primary-dark); }
+
+.notice { border-radius: 18px; padding: 18px; background: #eaf4ef; border: 1px solid #b8d8c2; color: #173d33; }
+.error { border-radius: 18px; padding: 18px; background: #fff7ed; border: 1px solid #fed7aa; color: #9a3412; }
+
+.calendar-layout { display: grid; grid-template-columns: 1.1fr .9fr; gap: 24px; }
+.calendar-panel { display: grid; gap: 20px; }
+.day-strip { display: grid; grid-template-columns: repeat(7, minmax(90px, 1fr)); gap: 10px; overflow-x: auto; padding-bottom: 6px; }
+.day-card {
+  border: 1px solid var(--border);
+  background: white;
+  border-radius: 18px;
+  padding: 14px 10px;
+  cursor: pointer;
+  text-align: center;
+  min-width: 92px;
+}
+.day-card.active { background: var(--primary); color: white; border-color: var(--primary); }
+.day-card small { display: block; opacity: .8; margin-bottom: 4px; }
+.day-card strong { display: block; font-size: 22px; }
+.slot-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 11px; }
+.slot {
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: white;
+  padding: 12px;
+  cursor: pointer;
+  font-weight: 700;
+}
+.slot.active { background: var(--primary); color: white; border-color: var(--primary); }
+.summary-box { background: #fbfaf5; border: 1px solid var(--border); border-radius: 20px; padding: 18px; }
+
+.table-wrap { overflow-x: auto; }
+.table { width: 100%; border-collapse: collapse; background: white; border-radius: 18px; overflow: hidden; }
+.table th, .table td { border-bottom: 1px solid var(--border); padding: 12px; text-align: left; vertical-align: top; }
+.table th { background: #eaf4ef; }
+.admin-actions { display: flex; gap: 8px; flex-wrap: wrap; }
+
+.faq details { background: white; border: 1px solid var(--border); border-radius: 18px; padding: 18px 20px; margin-bottom: 14px; }
+.faq summary { cursor: pointer; font-weight: 800; color: var(--text); }
+
+.kpi { background: white; border: 1px solid var(--border); border-radius: 22px; padding: 20px; }
+.kpi strong { display: block; font-size: 30px; color: var(--primary); }
+.process-step { display: grid; grid-template-columns: 52px 1fr; gap: 16px; align-items: start; }
+.step-number {
+  width: 52px;
+  height: 52px;
+  border-radius: 999px;
+  background: var(--accent);
+  color: var(--primary-dark);
+  display: grid;
+  place-items: center;
+  font-weight: 900;
+  font-size: 20px;
+}
+.reminder-pill, .status-pill {
+  display: inline-block;
+  border-radius: 999px;
+  padding: 6px 10px;
+  background: #eaf4ef;
+  color: var(--primary);
+  font-weight: 800;
+  font-size: 13px;
+}
+
+.lead-popup {
+  position: fixed;
+  left: 22px;
+  bottom: 22px;
+  z-index: 55;
+  width: min(360px, calc(100% - 44px));
+}
+.lead-popup .card { border: 2px solid rgba(46, 94, 78, .16); }
+.mini-actions { display: flex; gap: 8px; flex-wrap: wrap; }
+.small-link { border: none; background: transparent; color: var(--muted); cursor: pointer; text-decoration: underline; padding: 0; }
+
+.whatsapp-float {
+  position: fixed;
+  right: 22px;
+  bottom: 22px;
+  z-index: 60;
+  background: #16a34a;
+  color: white;
+  border-radius: 999px;
+  padding: 14px 18px;
+  font-weight: 800;
+  box-shadow: 0 14px 28px rgba(22, 163, 74, .28);
+}
+
+@media (max-width: 1000px) {
+  .calendar-layout { grid-template-columns: 1fr; }
+  .day-strip { grid-template-columns: repeat(7, 110px); }
+}
+@media (max-width: 900px) {
+  .grid-4 { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 760px) {
+  .hero-grid, .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
+  .navbar-inner { align-items: flex-start; flex-direction: column; padding: 16px 0; }
+  .slot-grid { grid-template-columns: repeat(2, 1fr); }
+  .price-card.highlight { transform: none; }
+  .footer-grid { align-items: flex-start; flex-direction: column; }
+  .brand-logo { width: 48px; height: 48px; }
+}
+/* Ajustes solicitados v2 */
+.service-thumb {
+  width: 100%;
+  height: 112px;
+  object-fit: cover;
+  border-radius: 18px;
+  margin-bottom: 14px;
+  border: 1px solid var(--border);
+  background: var(--soft-green);
+}
+
+.section.dark .card {
+  background: #0f2f28;
+  border-color: rgba(217, 235, 223, .18);
+  box-shadow: 0 16px 34px rgba(0, 0, 0, .18);
+}
+
+.section.dark .card h3,
+.section.dark .card p {
+  color: #f4fbf7;
+}
+
+.section.dark .step-number {
+  background: #b8d8c2;
+  color: #173d33;
+}
+
+.wellness-card {
+  gap: 18px;
+}
+
+.wellness-image {
+  width: 100%;
+  max-height: 250px;
+  object-fit: cover;
+  border-radius: 24px;
+  background: #eaf4ef;
+  border: 1px solid rgba(255,255,255,.45);
+}
+
+/* Imagen del servicio Masaje Relajante: mantener tamaño original 138x132 px, sin expandir ni recortar */
+.service-thumb-relajante-original {
+  width: 138px;
+  height: 132px;
+  max-width: 100%;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto 14px;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  background: transparent;
+  image-rendering: auto;
+}
+
+
+/* Imagen del servicio Masaje Descontracturante: mantener tamaño original 130x108 px, sin expandir ni recortar */
+.service-thumb-descontracturante-original {
+  width: 130px;
+  height: 108px;
+  max-width: 100%;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto 14px;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  background: transparent;
+  image-rendering: auto;
+}
+
+/* Imagen del servicio Masaje Mixto: mantener tamaño original 144x95 px, sin expandir ni recortar */
+.service-thumb-mixto-original {
+  width: 144px;
+  height: 95px;
+  max-width: 100%;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto 14px;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  background: transparent;
+  image-rendering: auto;
+}
+
+
+/* Imagen del servicio Masaje con Piedras Calientes: mantener tamaño original 155x112 px, sin expandir ni recortar */
+.service-thumb-piedras-original {
+  width: 155px;
+  height: 112px;
+  max-width: 100%;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto 14px;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  background: transparent;
+  image-rendering: auto;
+}
+
+
+/* Imagen del servicio Piernas Cansadas: mantener tamaño original 136x135 px, sin expandir ni recortar */
+.service-thumb-piernas-original {
+  width: 136px;
+  height: 135px;
+  max-width: 100%;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto 14px;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  background: transparent;
+  image-rendering: auto;
+}
+
+
+/* Imagen del servicio Masaje Craneal: mantener tamaño original 146x130 px, sin expandir ni recortar */
+.service-thumb-craneal-original {
+  width: 146px;
+  height: 130px;
+  max-width: 100%;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto 14px;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  background: transparent;
+  image-rendering: auto;
+}
+
+
+/* Imagen del servicio Masaje para Bruxismo: mantener tamaño original 141x134 px, sin expandir ni recortar */
+.service-thumb-bruxismo-original {
+  width: 141px;
+  height: 134px;
+  max-width: 100%;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto 14px;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  background: transparent;
+  image-rendering: auto;
+}
+
+/* Imagen del servicio Masaje Linfático: mantener tamaño original 109x105 px, sin expandir ni recortar */
+.service-thumb-linfatico-original {
+  width: 109px;
+  height: 105px;
+  max-width: 100%;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto 14px;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  background: transparent;
+  image-rendering: auto;
+}

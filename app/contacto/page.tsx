@@ -1,0 +1,32 @@
+import ContactForm from "../../components/ContactForm";
+
+export const metadata = {
+  title: "Contacto",
+  description: "Formulario de contacto de Umbral Corporal."
+};
+
+export default function Contacto() {
+  return (
+    <main>
+      <section className="section">
+        <div className="container">
+          <div className="eyebrow">Contacto</div>
+          <h1>Solicita información o agenda un servicio</h1>
+          <p>Envíanos tus datos y el detalle de lo que necesitas.</p>
+          <div className="grid-2" style={{ marginTop: 28 }}>
+            <div className="card">
+              <h2>Formulario de contacto</h2>
+              <ContactForm />
+            </div>
+            <div className="card">
+              <img src="/logo-umbral-corporal.png" alt="Umbral Corporal" className="contact-logo" />
+              <h2>Atención profesional</h2>
+              <p>Servicios de masoterapia profesional, relajación y bienestar corporal.</p>
+              <p>También puedes usar el botón flotante de WhatsApp.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  );
+}
