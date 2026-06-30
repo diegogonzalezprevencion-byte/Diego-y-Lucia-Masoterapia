@@ -1,4 +1,0 @@
-import { NextResponse } from "next/server";
-import { getSupabaseAdmin } from "../../../lib/supabaseAdmin";
-export const dynamic="force-dynamic";
-export async function POST(request:Request){const{client,error:configError}=getSupabaseAdmin();if(!client)return NextResponse.json({ok:false,error:configError},{status:500});try{const body=await request.json();if(!body.nombre||!body.email||!body.mensaje)return NextResponse.json({ok:false,error:"Faltan nombre, email o mensaje."},{status:400});const{data,error}=await client.from("contactos").insert({nombre:body.nombre,email:body.email,telefono:body.telefono||"",mensaje:body.mensaje,origen:"web"}).select().single();if(error)return NextResponse.json({ok:false,error:error.message},{status:500});return NextResponse.json({ok:true,contacto:data,automation:{emailPrepared:true,contactEmail:process.env.CONTACT_EMAIL||"No configurado"}})}catch{return NextResponse.json({ok:false,error:"No se pudo procesar el contacto."},{status:400})}}
