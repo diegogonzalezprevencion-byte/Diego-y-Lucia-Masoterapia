@@ -1,4 +1,0 @@
-import { NextResponse } from "next/server";
-import { getSupabaseAdmin } from "../../../../lib/supabaseAdmin";
-export const dynamic="force-dynamic";
-export async function PATCH(request:Request,context:{params:Promise<{id:string}>}){const{client,error:configError}=getSupabaseAdmin();if(!client)return NextResponse.json({ok:false,error:configError},{status:500});const{id}=await context.params;const body=await request.json();if(!["pendiente","confirmada","cancelada"].includes(body.estado))return NextResponse.json({ok:false,error:"Estado no válido."},{status:400});const{data,error}=await client.from("reservas").update({estado:body.estado}).eq("id",id).select().single();if(error)return NextResponse.json({ok:false,error:error.message},{status:500});return NextResponse.json({ok:true,reserva:data})}
