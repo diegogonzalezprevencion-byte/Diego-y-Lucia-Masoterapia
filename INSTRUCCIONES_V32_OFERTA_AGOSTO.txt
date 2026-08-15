@@ -1,0 +1,13 @@
+# Cambios v32 - Oferta agosto 20%
+
+Esta versión incorpora la promoción de agosto:
+
+- En la sección "Ofertas mensuales de masoterapia", agosto queda como:
+  "Agosto con 20% de descuento".
+- El descuento aplica a cualquier tipo de masaje cuando la fecha seleccionada corresponde al mes de agosto.
+- El resumen de reserva muestra:
+  precio normal, descuento aplicado y total con descuento.
+- Si el servicio no tiene precio definido, se indica que el descuento aplica sobre el valor acordado.
+- La reserva se guarda con la información de la oferta en el campo "servicio", por lo que no requiere cambios nuevos en Supabase.
+
+No es necesario ejecutar migraciones nuevas en Supabase para esta versión.
