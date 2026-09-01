@@ -1,0 +1,30 @@
+# Cambios v36 - Ofertas editables, secciones compactas y galería eliminada
+
+Esta versión incorpora:
+
+1. Ofertas públicas limitadas a 2 meses móviles:
+   - mes en curso;
+   - mes siguiente.
+   Las ofertas avanzan automáticamente mes a mes usando la zona horaria de Chile.
+
+2. Nueva sección Admin > Ofertas mensuales:
+   - permite modificar título;
+   - servicio destacado;
+   - descripción;
+   - porcentaje de descuento automático;
+   - estado activa/oculta;
+   - estilo visual.
+
+3. La agenda ahora calcula descuentos según la oferta activa del mes seleccionado.
+   Ejemplo: si agosto tiene 20%, al seleccionar una fecha de agosto se aplica ese porcentaje al resumen.
+
+4. Se eliminó la sección Galería del modo administrador.
+
+5. La sección Nuestros servicios fue compactada aproximadamente al 50%.
+
+6. Se unificó la sección "Una experiencia de bienestar ordenada y profesional" con el afiche "Bienestar integral" en una sola sección dividida.
+   El afiche se redujo aproximadamente al 50%.
+
+IMPORTANTE - Supabase:
+Ejecuta el archivo:
+supabase/migracion_v36_ofertas_mensuales.sql
