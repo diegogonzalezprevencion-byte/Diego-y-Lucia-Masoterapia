@@ -1,2 +1,0 @@
-Archivos que aún mencionan prevención/riesgos/CPHS:
-app/newsletter/page.tsx
