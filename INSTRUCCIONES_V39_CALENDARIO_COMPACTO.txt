@@ -1,0 +1,18 @@
+# Cambios v39 - Calendario mensual compacto
+
+Esta versión reemplaza el calendario de tarjetas grandes por un calendario mensual compacto.
+
+Cambios:
+1. La agenda pública muestra un selector de mes con solo 2 opciones:
+   - Mes en curso.
+   - Mes siguiente.
+2. El calendario se muestra como cuadro mensual compacto, similar a un calendario tradicional.
+3. Los días con horarios disponibles se marcan en verde.
+4. Los días sin agenda disponible o fechas pasadas se marcan en rojo.
+5. Solo los días verdes se pueden seleccionar.
+6. Al seleccionar un día, se muestran los horarios disponibles abajo.
+7. Se mantiene la estructura larga:
+   - Calendario arriba.
+   - Datos de contacto abajo.
+   - Resumen debajo de los datos de contacto.
+8. No requiere nueva migración en Supabase.

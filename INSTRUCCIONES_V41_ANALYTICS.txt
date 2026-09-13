@@ -1,0 +1,27 @@
+Cambios v41 - Analítica web en Dashboard
+
+1. Ejecutar en Supabase el archivo:
+   supabase/migracion_v41_analytics.sql
+
+2. Subir el ZIP a GitHub/Vercel y redeploy.
+
+3. Desde ese momento, la web empezará a registrar:
+   - Visitas a páginas públicas.
+   - Visitantes únicos aproximados por navegador/dispositivo.
+   - Sesiones.
+   - Clics en botones y enlaces.
+   - Página donde ocurre el evento.
+   - Origen del tráfico/referrer.
+   - Parámetros UTM si se usan campañas.
+   - Datos técnicos generales como pantalla, idioma y user-agent.
+
+4. El dashboard administrador mostrará una nueva sección llamada:
+   Analítica web / Visitas, clics y eficiencia de la página.
+
+5. Los filtros disponibles son:
+   - Fecha desde.
+   - Fecha hasta.
+   - Tipo de evento: todos, visitas o clics.
+   - Ruta/página.
+
+6. La analítica no identifica personas por nombre; usa identificadores técnicos del navegador para medir alcance y comportamiento.

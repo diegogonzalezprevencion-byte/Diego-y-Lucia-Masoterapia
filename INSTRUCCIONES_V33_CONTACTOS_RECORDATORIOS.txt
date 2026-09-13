@@ -1,0 +1,24 @@
+# Cambios v33 - Contactos y recordatorios
+
+Esta versión agrega:
+1. Panel Admin > Contactos para revisar formularios enviados desde la web.
+2. Botones "Revisado" y "No revisado" para cada formulario.
+3. Tabla de reservas más compacta para evitar desplazamiento horizontal en escritorio.
+4. Recordatorios con fecha en formato DD-MM-YYYY.
+5. Mensajes de recordatorio sin uso incorrecto de "mañana" para reservas futuras.
+6. Link de anamnesis en los mensajes de recordatorio:
+   https://forms.gle/tDsryBDYKpnaMtAw8
+7. Columna y filtro de masoterapeuta en gestión de recordatorios.
+
+IMPORTANTE - Supabase:
+Ejecuta el archivo:
+supabase/migracion_v33_contactos_revisados.sql
+
+Código:
+alter table if exists public.contactos
+add column if not exists revisado boolean not null default false;
+
+alter table if exists public.contactos
+add column if not exists revisado_at timestamp with time zone;
+
+notify pgrst, 'reload schema';
