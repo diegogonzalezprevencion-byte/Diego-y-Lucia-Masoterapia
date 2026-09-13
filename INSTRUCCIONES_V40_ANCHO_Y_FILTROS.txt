@@ -1,1 +1,0 @@
-Se amplió el ancho general del sitio y se movieron los filtros de sucursal y masoterapeuta a la sección del calendario.
