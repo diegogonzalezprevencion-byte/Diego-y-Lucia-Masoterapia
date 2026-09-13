@@ -1,0 +1,30 @@
+# v42 - Correo de confirmación de reserva
+
+Esta versión mejora el botón Confirmar en Admin > Reservas.
+
+Al confirmar una reserva:
+1. Cambia el estado a confirmada.
+2. Envía un correo automático al cliente.
+3. El correo incluye:
+   - Servicio.
+   - Fecha.
+   - Hora.
+   - Lugar / sucursal.
+   - Masoterapeuta.
+   - Valor.
+   - Contacto de WhatsApp.
+4. El remitente visible queda como Umbral Corporal <contacto@umbralcorporal.cl>, siempre que las variables SMTP estén configuradas correctamente en Vercel.
+
+Variables necesarias en Vercel > Settings > Environment Variables > Production:
+
+EMAIL_HOST=HOST_SMTP_DEL_CORREO
+EMAIL_PORT=465
+EMAIL_SECURE=true
+EMAIL_USER=contacto@umbralcorporal.cl
+EMAIL_PASS=CLAVE_SMTP_O_CLAVE_DEL_CORREO
+EMAIL_FROM=Umbral Corporal <contacto@umbralcorporal.cl>
+EMAIL_TO=contacto@umbralcorporal.cl
+
+Luego hacer Redeploy en Vercel.
+
+No requiere migración de Supabase.
