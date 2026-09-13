@@ -1,0 +1,20 @@
+# Cambios v29 - Umbral Corporal
+
+Esta versión incorpora:
+
+1. Recordatorios de WhatsApp hacia el teléfono del cliente.
+2. Ajustes responsive para una mejor visualización móvil.
+3. Servicio actualizado: "Masaje relajante más piedras caliente".
+4. Testimonios simplificados: comentario, nombre, edad y servicio realizado.
+5. Calendario de agenda extendido a 62 días móviles.
+6. Selección de sucursal en la agenda: Santiago Centro / Comuna de San Miguel.
+7. Selección de masoterapeuta: Diego González / Lucia Lorca.
+8. Gestión de disponibilidad por fecha + sucursal + masoterapeuta.
+
+## Paso obligatorio en Supabase
+
+Ejecutar en Supabase > SQL Editor > New query > Run:
+
+supabase/migracion_v29_sucursales_masoterapeutas_testimonios.sql
+
+Este paso es necesario para que la agenda diferencie horarios por sucursal y masoterapeuta.
